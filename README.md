@@ -1,14 +1,23 @@
 # calendario_ics
 
-Módulo de Python para gestionar eventos en archivos .ics de KOrganizer. Proporciona operaciones CRUD (crear, leer, actualizar, eliminar) sobre eventos almacenados en archivos iCalendar (.ics) en el directorio de KOrganizer. Todas las funciones devuelven (bool, str) o (uid, str) según corresponda.
+Módulo de Python para gestionar eventos en archivos .ics de KOrganizer.  
+Python module to manage events in KOrganizer .ics files.
 
-## Instalación
+Proporciona operaciones CRUD (crear, leer, actualizar, eliminar) sobre eventos almacenados en archivos iCalendar (.ics) en el directorio de KOrganizer.  
+Provides CRUD (create, read, update, delete) operations on events stored in iCalendar (.ics) files in the KOrganizer directory.
+
+Todas las funciones devuelven `(bool, str)` o `(uid, str)` según corresponda.  
+All functions return `(bool, str)` or `(uid, str)` as appropriate.
+
+---
+
+## Instalación / Installation
 
 ```bash
 pip install calendario_ics
 ```
 
-## Uso como librería
+## Uso como librería / Usage as a library
 
 ```bash
 
@@ -17,7 +26,7 @@ import calendario_ics as cal
 print(cal.listar_calendarios())
 ```
 
-## Uso como CLI
+## Uso como CLI / Usage as CLI
 
 ```bash
 
