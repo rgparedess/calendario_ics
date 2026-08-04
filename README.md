@@ -22,6 +22,9 @@ print(cal.listar_calendarios())
 ```bash
 
 calendario-cli calendars
+```
+
+```bash
 calendario-cli add --summary "Reunión" --dtstart "2026-08-05 10:00"
 ```
 
