@@ -17,6 +17,14 @@ All functions return `(bool, str)` or `(uid, str)` as appropriate.
 pip install calendario_ics
 ```
 
+# Con script / With script
+```bash
+
+# Copiar el script al directorio donde están los .py
+chmod +x install.sh
+./install.sh
+```
+
 ## Uso como librería / Usage as a library
 
 ```bash
