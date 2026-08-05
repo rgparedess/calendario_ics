@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script de instalación manual para calendario_ics y agente_calendario
+# Script de instalación manual para calendario_ics
 # Copia los archivos .py a ~/.local/bin y crea wrappers ejecutables.
 
 set -e
