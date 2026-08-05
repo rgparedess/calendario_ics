@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+# Copyright (c) 2026 Reinel G. Paredes
+# 
+# Este código está bajo la licencia MIT. Consulte el archivo LICENSE para más detalles.
+
 """
 Módulo para gestionar eventos en archivos .ics de KOrganizer.
 Proporciona operaciones CRUD (crear, leer, actualizar, eliminar) sobre eventos
