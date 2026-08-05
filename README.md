@@ -22,16 +22,24 @@ pip install calendario_ics
 ```bash
 
 import calendario_ics as cal
+```
 
+```bash
 # Listar calendarios disponibles / List available calendars
 print(cal.listar_calendarios())
+```
 
+```bash
 # Listar eventos de hoy / List today's events
 print(cal.listar_eventos(start="2026-08-05", end="2026-08-05"))
+```
 
+```bash
 # Listar eventos en un rango / List events in a range
 print(cal.listar_eventos(start="2026-08-01", end="2026-08-10"))
+```
 
+```bash
 # Agregar un evento / Add an event
 uid, msg = cal.agregar_evento(
     evento={
@@ -44,10 +52,13 @@ uid, msg = cal.agregar_evento(
     }
 )
 print(msg)  # Evento agregado con UID: agente-1234567890.1234
+```
 
+```bash
 # Mostrar un evento por su UID / Show an event by UID
 print(cal.mostrar_evento("agente-1234567890.1234"))
-
+```
+```bash
 # Modificar un evento / Modify an event
 ok, msg = cal.modificar_evento(
     "agente-1234567890.1234",
@@ -55,7 +66,8 @@ ok, msg = cal.modificar_evento(
     dtstart=cal.parsear_fecha_hora("2026-08-06 11:00")
 )
 print(msg)  # Evento agente-1234567890.1234 modificado.
-
+```
+```bash
 # Eliminar un evento / Delete an event
 ok, msg = cal.eliminar_evento("agente-1234567890.1234")
 print(msg)  # Evento agente-1234567890.1234 eliminado.
@@ -67,22 +79,31 @@ print(msg)  # Evento agente-1234567890.1234 eliminado.
 
 # Listar calendarios / List calendars
 calendario-cli calendars
-
+```
+```bash
 # Listar eventos de hoy / List today's events
 calendario-cli list --start 2026-08-05 --end 2026-08-05
+```
 
+```bash
 # Listar eventos en un rango / List events in a range
 calendario-cli list --start 2026-08-01 --end 2026-08-10
-
+```
+```bash
 # Agregar evento / Add event
 calendario-cli add --summary "Reunión con equipo / Team meeting" --description "Revisar avances / Review progress" --dtstart "2026-08-05 10:00" --dtend "2026-08-05 11:30" --location "Oficina virtual / Virtual office" --priority 5
-
+```
+```bash
 # Mostrar evento / Show event
 calendario-cli show agente-1234567890.1234
+```
 
+```bash
 # Modificar evento / Modify event
 calendario-cli modify agente-1234567890.1234 --summary "Reunión importante / Important meeting" --dtstart "2026-08-06 11:00"
+```
 
+```bash
 # Eliminar evento / Delete event
 calendario-cli delete agente-1234567890.1234
 ```
