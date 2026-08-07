@@ -8,7 +8,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="calendario_ics",
-    version="1.0.0",
+    version="1.0.1",
     author="Reinel G. Paredes",
     author_email="reinelgparedes@gmail.com",
     description="Backend para manipular archivos ICS de KOrganizer / Backend to manipulate KOrganizer ICS files",
