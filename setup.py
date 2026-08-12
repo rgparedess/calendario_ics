@@ -8,10 +8,10 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="calendario_ics",
-    version="2.0.0",
+    version="2.1.0",
     author="Reinel G. Paredes",
     author_email="reinelgparedes@gmail.com",
-    description="Backend para manipular archivos ICS de calendario / Backend to manipulate calendar ICS files",
+    description="Biblioteca para manipular archivos ICS de calendario / Library to manipulate calendar ICS files",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/rgparedess/calendario_ics",
