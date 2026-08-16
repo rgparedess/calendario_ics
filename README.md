@@ -121,9 +121,9 @@ print(msg)  # Evento agregado con UID: agente-1234567890.1234
 print(cal.mostrar_evento("agente-1234567890.1234"))
 ```
 ```bash
-# Modificar un evento / Modify an event
+# Modificar un evento por UID / Modify an event by UID
 ok, msg = cal.modificar_evento(
-    "agente-1234567890.1234",
+    uid="agente-1234567890.1234",
     summary="Reunión importante / Important meeting",
     dtstart=cal.parsear_fecha_hora("2026-08-06 11:00")
 )
@@ -133,6 +133,48 @@ print(msg)  # Evento agente-1234567890.1234 modificado.
 # Eliminar un evento / Delete an event
 ok, msg = cal.eliminar_evento("agente-1234567890.1234")
 print(msg)  # Evento agente-1234567890.1234 eliminado.
+```
+
+```bash
+# Buscar por filtros / Search whith filter
+eventos = cal.buscar_eventos(fecha="2026-08-17", texto="reunión")
+for ev in eventos:
+    print(f"{ev['summary']} - {ev['dtstart'].strftime('%Y-%m-%d %H:%M')}") # Reunión - 2026-08-17 10:00
+
+eventos_ubicacion = cal.buscar_eventos(ubicacion="Casa", hora="10:00")
+for ev in eventos_ubicacion:
+    print(f"{ev['summary']} - {ev['location']}") # Reunión - Casa
+```
+
+```bash
+# Modificar por filtros / Modify whith filter
+ok, msg, coincidencias = cal.modificar_por_filtro(
+    calendario="personal",
+    filtros={"fecha": "2026-08-18", "texto": "proyecto"},
+    cambios={"summary": "Proyecto actualizado", "location": "Oficina"}
+)
+if ok:
+    print(msg)
+else:
+    print(msg)  # "Varios eventos coinciden. Elige uno:" + lista
+    for i, ev in enumerate(coincidencias, 1):
+        print(f"{i}. {ev['summary']} - {ev['dtstart'].strftime('%Y-%m-%d %H:%M')}")
+```
+
+```bash
+# Eliminar por filtros / Delete whith filter
+ok, msg, coincidencias = cal.eliminar_por_filtro(
+    calendario="personal",
+    filtros={"fecha": "2026-08-17", "ubicacion": "Casa 1"}
+)
+if ok:
+    print(msg)
+else:
+    print(msg)  # "Varios eventos coinciden. Elige uno:" + lista
+    # Luego puedes iterar sobre coincidencias y eliminar por UID
+    for ev in coincidencias:
+        ok2, msg2 = cal.eliminar_evento(ev['uid'])
+        print(f"{ev['summary']}: {msg2}")
 ```
 
 ## Uso como CLI / Usage as CLI
@@ -169,6 +211,25 @@ calendario-cli modify agente-1234567890.1234 --summary "Reunión importante / Im
 # Eliminar evento / Delete event
 calendario-cli delete agente-1234567890.1234
 ```
+
+```bash
+# Buscar / Search
+calendario-cli search --date 2026-08-17 --text "reunión"
+```
+
+```bash
+# Eliminar con filtro / Delete with filter
+calendario-cli delete-filter --date 2026-08-17 --location "Casa 1"
+```
+
+```bash
+# Modificar con filtro / Modify with filter
+calendario-cli modify-filter --date 2026-08-18 --text "proyecto" --set-location "Sala Principal" --summary "Reunión de proyecto (actualizada)"
+```
+
+## Ejemplo visual en el calendario KOrganizer / Visual in KOrganizer calendar
+
+![Captura de Ejemplo visual en el calendario KOrganizer](docs/images/ejemplo.png)
 
 ### `LICENSE`
 
