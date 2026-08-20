@@ -6,9 +6,13 @@ from setuptools import setup, find_packages
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
+with open("CHANGELOG.md", "r", encoding="utf-8") as fh:
+    changelog = fh.read()
+    long_description += "\n\n---\n\n## Historial de Cambios\n\n" + changelog
+
 setup(
     name="calendario_ics",
-    version="2.3.0",
+    version="2.3.1",
     author="Reinel G. Paredes",
     author_email="reinelgparedes@gmail.com",
     description="Biblioteca para manipular archivos ICS de calendario / Library to manipulate calendar ICS files",

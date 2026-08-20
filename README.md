@@ -32,13 +32,15 @@ pip install calendario_ics
 ### Con script / With script
 ```bash
 # Para Linux / For Linux
-# Copiar el script al directorio donde están los .py
+# Copiar el script al directorio donde está el binario
+# Abrir la terminal
 chmod +x install.sh
 ./install.sh
 ```
 
 ```bash
 # Para Windows / For Windows
+# Copiar el script al directorio donde está el binario
 # Abrir PowerShell
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 .\install.ps1
@@ -92,12 +94,7 @@ print(cal.listar_calendarios())
 ```
 
 ```bash
-# Listar eventos de hoy / List today's events
-print(cal.listar_eventos(start="2026-08-05", end="2026-08-05"))
-```
-
-```bash
-# Listar eventos en un rango / List events in a range
+# Listar eventos por rango de fechas / List events by date range
 print(cal.listar_eventos(start="2026-08-01", end="2026-08-10"))
 ```
 
@@ -137,13 +134,21 @@ print(msg)  # Evento agente-1234567890.1234 eliminado.
 
 ```bash
 # Buscar por filtros / Search whith filter
+# Buscar por fecha y texto
 eventos = cal.buscar_eventos(fecha="2026-08-17", texto="reunión")
 for ev in eventos:
     print(f"{ev['summary']} - {ev['dtstart'].strftime('%Y-%m-%d %H:%M')}") # Reunión - 2026-08-17 10:00
 
+# Buscar por ubicación y hora
 eventos_ubicacion = cal.buscar_eventos(ubicacion="Casa", hora="10:00")
 for ev in eventos_ubicacion:
     print(f"{ev['summary']} - {ev['location']}") # Reunión - Casa
+```
+
+```bash
+# Contar eventos por filtros / Count events by filter
+cantidad = cal.contar_eventos(fecha="2026-08-17")
+print(f"Hay {cantidad} eventos el 2026-08-17")
 ```
 
 ```bash
