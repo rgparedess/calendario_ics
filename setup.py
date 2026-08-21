@@ -16,7 +16,6 @@ setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/rgparedess/calendario_ics",
-    include_package_data=True,
     py_modules=["calendario_ics"],
     license="MIT",
     classifiers=[
