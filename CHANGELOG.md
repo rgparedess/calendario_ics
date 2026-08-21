@@ -1,10 +1,11 @@
 # CHANGELOG - calendario_ics
 
-## [3.0.0] - 2026-08-20
+## [3.0.0] - 2026-08-21
 
 ### Fixed
 - **Parseo de fechas en `agregar_evento`**: Ahora, cuando los parámetros `dtstart` y `dtend` se reciben como strings (a través de `**kwargs`), se convierten correctamente a objetos `datetime` usando `parsear_fecha_hora()` antes de construir el evento. Esto evita que los eventos se guarden sin fecha y no aparezcan en KOrganizer.
 - **Manejo de `priority` en `agregar_evento`**: El parámetro `priority` ahora es opcional, lo que evita que el LLM tenga que generar un valor por defecto si no se especifica.
+- Se corrigió un error que impedía la ejecución del binario en Windows": si hubo un bug específico relacionado con el empaquetado.
 
 ### Changed
 - **Flexibilidad en `agregar_evento`**: La función ahora acepta `**kwargs` y construye el diccionario `evento` directamente, permitiendo una mayor compatibilidad con el nuevo agente basado en `tool_calls`.

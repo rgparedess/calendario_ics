@@ -1,4 +1,6 @@
-# calendario_ics
+![Logo de calendario_ics calendario-cli](logo/logo.png)
+
+# calendario_ics calendario-cli
 
 Módulo de Python para gestionar eventos en archivos .ics del calendario.  
 Python module to manage events in calendar .ics files.
@@ -44,6 +46,19 @@ chmod +x install.sh
 # Abrir PowerShell
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 .\install.ps1
+``` 
+
+### O ejecutar el binario / Or run the binary
+```bash
+# Para Linux / For Linux
+# Abrir la terminal
+./calendario-cli
+```
+
+```bash
+# Para Windows / For Windows
+# Doble click en el ejecutable
+calendario-cli.exe
 ``` 
 
 ## Configuración avanzada / Advanced configuration
